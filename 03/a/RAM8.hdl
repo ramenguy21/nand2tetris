@@ -13,5 +13,30 @@ CHIP RAM8 {
     OUT out[16];
 
     PARTS:
-    //// Replace this comment with your code.
+    DMux8Way(in=load, sel=address, a=l0, b=l1, c=l2, d=l3, e=l4, f=l5, g=l6, h=l7);
+    DMux8Way(in=in[0], sel=address, a=r00, b=r10, c=r20, d=r30, e=r40, f=r50, g=r60, h=r70);
+    DMux8Way(in=in[1], sel=address, a=r01, b=r11, c=r21, d=r31, e=r41, f=r51, g=r61, h=r71);
+    DMux8Way(in=in[2], sel=address, a=r02, b=r12, c=r22, d=r32, e=r42, f=r52, g=r62, h=r72);
+    DMux8Way(in=in[3], sel=address, a=r03, b=r13, c=r23, d=r33, e=r43, f=r53, g=r63, h=r73);
+    DMux8Way(in=in[4], sel=address, a=r04, b=r14, c=r24, d=r34, e=r44, f=r54, g=r64, h=r74);
+    DMux8Way(in=in[5], sel=address, a=r05, b=r15, c=r25, d=r35, e=r45, f=r55, g=r65, h=r75);
+    DMux8Way(in=in[6], sel=address, a=r06, b=r16, c=r26, d=r36, e=r46, f=r56, g=r66, h=r76);
+    DMux8Way(in=in[7], sel=address, a=r07, b=r17, c=r27, d=r37, e=r47, f=r57, g=r67, h=r77);
+    DMux8Way(in=in[8], sel=address, a=r08, b=r18, c=r28, d=r38, e=r48, f=r58, g=r68, h=r78);
+    DMux8Way(in=in[9], sel=address, a=r09, b=r19, c=r29, d=r39, e=r49, f=r59, g=r69, h=r79);
+    DMux8Way(in=in[10], sel=address, a=r010, b=r110, c=r210, d=r310, e=r410, f=r510, g=r610, h=r710);
+    DMux8Way(in=in[11], sel=address, a=r011, b=r111, c=r211, d=r311, e=r411, f=r511, g=r611, h=r711);
+    DMux8Way(in=in[12], sel=address, a=r012, b=r112, c=r212, d=r312, e=r412, f=r512, g=r612, h=r712);
+    DMux8Way(in=in[13], sel=address, a=r013, b=r113, c=r213, d=r313, e=r413, f=r513, g=r613, h=r713);
+    DMux8Way(in=in[14], sel=address, a=r014, b=r114, c=r214, d=r314, e=r414, f=r514, g=r614, h=r714);
+    DMux8Way(in=in[15], sel=address, a=r015, b=r115, c=r215, d=r315, e=r415, f=r515, g=r615, h=r715);
+    Register(in[0]=r00, in[1]=r01, in[2]=r02, in[3]=r03, in[4]=r04, in[5]=r05, in[6]=r06, in[7]=r07, in[8]=r08, in[9]=r09, in[10]=r010, in[11]=r011, in[12]=r012, in[13]=r013, in[14]=r014, in[15]=r015, load=l0, out=oa);
+    Register(in[0]=r10, in[1]=r11, in[2]=r12, in[3]=r13, in[4]=r14, in[5]=r15, in[6]=r16, in[7]=r17, in[8]=r18, in[9]=r19, in[10]=r110, in[11]=r111, in[12]=r112, in[13]=r113, in[14]=r114, in[15]=r115, load=l1, out=ob);
+    Register(in[0]=r20, in[1]=r21, in[2]=r22, in[3]=r23, in[4]=r24, in[5]=r25, in[6]=r26, in[7]=r27, in[8]=r28, in[9]=r29, in[10]=r210, in[11]=r211, in[12]=r212, in[13]=r213, in[14]=r214, in[15]=r215, load=l2, out=oc);
+    Register(in[0]=r30, in[1]=r31, in[2]=r32, in[3]=r33, in[4]=r34, in[5]=r35, in[6]=r36, in[7]=r37, in[8]=r38, in[9]=r39, in[10]=r310, in[11]=r311, in[12]=r312, in[13]=r313, in[14]=r314, in[15]=r315, load=l3, out=od);
+    Register(in[0]=r40, in[1]=r41, in[2]=r42, in[3]=r43, in[4]=r44, in[5]=r45, in[6]=r46, in[7]=r47, in[8]=r48, in[9]=r49, in[10]=r410, in[11]=r411, in[12]=r412, in[13]=r413, in[14]=r414, in[15]=r415, load=l4, out=oe);
+    Register(in[0]=r50, in[1]=r51, in[2]=r52, in[3]=r53, in[4]=r54, in[5]=r55, in[6]=r56, in[7]=r57, in[8]=r58, in[9]=r59, in[10]=r510, in[11]=r511, in[12]=r512, in[13]=r513, in[14]=r514, in[15]=r515, load=l5, out=of);
+    Register(in[0]=r60, in[1]=r61, in[2]=r62, in[3]=r63, in[4]=r64, in[5]=r65, in[6]=r66, in[7]=r67, in[8]=r68, in[9]=r69, in[10]=r610, in[11]=r611, in[12]=r612, in[13]=r613, in[14]=r614, in[15]=r615, load=l6, out=og);
+    Register(in[0]=r70, in[1]=r71, in[2]=r72, in[3]=r73, in[4]=r74, in[5]=r75, in[6]=r76, in[7]=r77, in[8]=r78, in[9]=r79, in[10]=r710, in[11]=r711, in[12]=r712, in[13]=r713, in[14]=r714, in[15]=r715, load=l7, out=oh);
+    Mux8Way16(a=oa, b=ob, c=oc, d=od, e=oe, f=of, g=og, h=oh, sel=address, out=out);
 }
